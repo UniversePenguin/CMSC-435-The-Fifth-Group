@@ -8,6 +8,7 @@ parfor i=1:l
     for u=1:158
         EL(i,u)=ME(g_p{i}{u});
     end
+    display(i)
 end
 char='ARNDCQEGHILKMFPSTWYV';
 parfor i=1:l
