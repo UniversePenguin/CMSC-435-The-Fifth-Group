@@ -2,7 +2,7 @@
 #include <math.h>
 #include <vector>
 #include <string>
-#include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/Eigen>
 using namespace std;
 using namespace Eigen;
 
@@ -84,13 +84,18 @@ myDouble3 psi(vector<myDouble3> *aggregator, string seq, string AAindex, int i) 
     myDouble3 term2 = upper_phi(AAindex.find_first_of(seq[i-1])+1);
     myDouble3 term3 = myDouble3();
 
+    double sum = 0.0;
+
     for (int omega_1 = 0; omega_1 < aminoAcids.size(); omega_1++) {
         for (int omega_2 = 0; omega_2 < aminoAcids.size(); omega_2++) { 
             myDouble3 phi_result = lower_phi(AAindex.find_first_of(aminoAcids[omega_1])+1, AAindex.find_first_of(aminoAcids[omega_2])+1);
             double freq = findPairFrequency(aminoAcids[omega_1], aminoAcids[omega_2], seq.substr(0, i));
             term3 = term3 + phi_result * freq;
+            sum += freq;
         }
     }
+
+    cout << sum << endl;
 
     myDouble3 toReturn = term1 + term2 + term3;
 
@@ -126,7 +131,7 @@ int main(void) {
         }
     }
 
-    cout << myMatrix << endl;
+    // cout << myMatrix << endl;
 
     cout << points.size() << endl;
 
