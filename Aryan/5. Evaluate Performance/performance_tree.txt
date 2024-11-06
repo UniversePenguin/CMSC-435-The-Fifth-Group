@@ -1,0 +1,28 @@
+
+    DNA: 
+        Sensitivity: 0.3
+        Specificity: 99.9
+        Accuracy: 95.5
+        MCC: 0.01
+        
+    RNA: 
+        Sensitivity: 24.9    
+        Specificity: 99.4
+        Accuracy: 95.0
+        MCC: 0.408
+        
+    DRNA: 
+        Sensitivity: 0.0
+        Specificity: 100.0
+        Accuracy: 99.7
+        MCC: 0.0
+        
+    nonDRNA: 
+        Sensitivity: 99.6
+        Specificity: 16.6
+        Accuracy: 90.7
+        MCC: 0.345
+        
+    averageMCC: 0.191
+    accuracy4labels 95.2
+    

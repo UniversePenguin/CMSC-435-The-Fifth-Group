@@ -1,0 +1,6 @@
+﻿,true nonDRNA,true RNA,true DNA,true DRNA,class precision
+pred. nonDRNA,6155,136,125,12,95.75%
+pred. RNA,374,291,77,3,39.06%
+pred. DNA,612,49,136,5,16.96%
+pred. DRNA,685,47,53,2,0.25%
+class recall,78.65%,55.64%,34.78%,9.09%,
