@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Model Evaluator</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+        <script src="metrics.js"></script>
+    </head>
+    <body>
+        <h1>Emily's Model Evaluator</h1>
+        <p>Please copy your confusion matrix into the box below and hit submit.</p>
+        <textarea id="matrix" rows="6" cols="50" name="Confusion Matrix"></textarea>
+        <button id="submitButton" type="button">Submit</button>
+
+        <pre id="output"></pre>
+
+        <script>
+            const submit_button = document.getElementById("submitButton");
+            const text_area = document.getElementById("matrix");
+            const output_area = document.getElementById("output");
+
+            submit_button.onclick = () => {
+                const result = findMetrics(text_area.value);
+                output_area.textContent = JSON.stringify(result, null, 4);
+            };
+        </script>
+    </body>
+</html>
