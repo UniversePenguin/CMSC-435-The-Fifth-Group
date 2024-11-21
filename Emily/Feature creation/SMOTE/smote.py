@@ -5,7 +5,11 @@ FILENAME = "MinMax_normal_data_Emily.csv"
 
 data = pd.read_csv(FILENAME)
 
-smote = imblearn.over_sampling.SMOTE(sampling_strategy='all')
+smote = imblearn.over_sampling.SMOTE(sampling_strategy={
+    "DRNA": 1000,
+    "DNA": 1000,
+    "RNA": 1000
+})
 
 x,y= smote.fit_resample(data.iloc[:,1:], data.iloc[:,0])
 
